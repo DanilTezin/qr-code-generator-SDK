@@ -2,6 +2,18 @@
 ##### SDK for generating and tracking qr codes https://qr-code-generator.com
 ##### Get your api key here https://app.qr-code-generator.com/api 
 
+### Parameters 
+| Parameter Name  |  Type | Default  |  Description |
+| ------------ | ------------ | ------------ | ------------ |
+| qr_code_text  | string  | Required  | What you like to encode e.g. https://www.yourdomain.com or Free Text   |
+|  image_format |  string | SVG  | The output file format for your QR Code. There are different formats available. Possible values: JPG, PNG, SVG, EPS  |
+|  qr_code_logo | string  | no-logo  |   |
+|  marker_left_template | string  | version1
+| marker_bottom_template |    
+| marker_right_template   | 
+| frame_name  |  string |   |   |
+
+
 ### Example
 ```javascript
 import { QrClient, QrRequestBody } from "./qrSDK";
