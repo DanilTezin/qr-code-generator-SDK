@@ -13,12 +13,11 @@ npm i qr-code-generator-sdk
 
 ### Example
 ```javascript
-import { QrClient, QrRequestBody } from "./qrSDK";
+import { QrClient } from 'qr-code-generator-sdk/dist/index.js'
 
 let new_QR = new QrClient('YOUR_TOKEN_IS_HERE')
 
-//Object for receiving qr code
-let qr: QrRequestBody = {
+let qrParam = {
     frame_name: "no-frame",
     qr_code_text: "https://www.npmjs.com/package/qr-code-generator-sdk",
     image_format: "SVG",
@@ -27,10 +26,10 @@ let qr: QrRequestBody = {
 }
 
 //Regular qr code generation
-new_QR.createQR(qr).then(response => console.log(response))
-
+new_QR.createQR(qrParam).then(response => console.log(response))
 
 ```
+### Result
 
 ### Parameters 
 | Parameter Name  |  Type | Default  |  Description |
