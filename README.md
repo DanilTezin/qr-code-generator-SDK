@@ -8,9 +8,6 @@ npm i qr-code-generator-sdk
 ```
 
 
-
-
-
 ### Example
 ```javascript
 import { QrClient } from 'qr-code-generator-sdk/dist/index.js'
@@ -30,6 +27,9 @@ new_QR.createQR(qrParam).then(response => console.log(response))
 
 ```
 ### Result
+![](https://i.ibb.co/XXWfg5q/svgviewer-png-output-1.png)
+
+
 
 ### Parameters 
 | Parameter Name  |  Type | Default  |  Description |
