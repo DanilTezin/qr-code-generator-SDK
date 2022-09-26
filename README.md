@@ -10,7 +10,7 @@ npm i qr-code-generator-sdk
 
 ### Example
 ```javascript
-import { QrClient } from 'qr-code-generator-sdk/dist/index.js'
+import { QrClient } from 'qr-code-generator-sdk'
 
 let new_QR = new QrClient('YOUR_TOKEN_IS_HERE')
 
