@@ -17,8 +17,6 @@ let qr: QrRequestBody = {
     marker_left_template: 'version1'
 }
 
-
-
 //Regular qr code generation
 new_QR.createQR(qr).then(response => console.log(response))
 
@@ -32,12 +30,12 @@ new_QR.createQR(qr).then(response => console.log(response))
 - marker_right_template
 - marker_bottom_template
 
-###### Description
+##### Description
 ![](https://i.ibb.co/bbYQKBy/version-Pic.png)
 
 #### Design Parameters qr_code_logo
 ###### type: string , Default:  no-logo
-###### Description
+##### Description
 1. ##### no-logo
 2. #####  scan-me
 3. ##### scan-me-square
