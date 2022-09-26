@@ -1,1 +1,5 @@
 node_modules
+.npmignore
+tslint.json
+.prettierrc
+.gitignore

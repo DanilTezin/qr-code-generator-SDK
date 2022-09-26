@@ -1,18 +1,58 @@
-import { QrClient, QrRequestBody } from "./qrSDK";
+import fetch from 'cross-fetch';
 
-let new_QR = new QrClient('YOUR_TOKEN_IS_HERE')
 
-//Object for receiving qr code
-let qr: QrRequestBody = {
-    frame_name: "no-frame",
-    qr_code_text: "https://www.qr-code-generator.com/",
-    image_format: "SVG",
-    qr_code_logo: 'no-logo',
-    marker_left_template: 'version1'
-    
-    
+type QrCodeLogo = 'no-logo' | 'scan-me' | 'scan-me-square'
+
+
+
+type VersionTemplate=
+      'version1' | 'version2' 
+    | 'version3' | 'version4' 
+    | 'version5' | 'version6' 
+    | 'version7' | 'version8' 
+    | 'version9' | 'version10'
+    | 'version11' | 'version11'
+    | 'version12' | 'version13'
+    | 'version14' | 'version15'| 'version16'
+
+
+export interface QrRequestBody {
+    frame_name?: string
+    qr_code_text?: string
+    image_format?: string
+    qr_code_logo: QrCodeLogo
+
+    marker_left_template?: VersionTemplate
+    marker_right_template?: VersionTemplate
+    marker_bottom_template?: VersionTemplate
 }
 
-//Regular qr code generation
-new_QR.createQR(qr).then(response => console.log(response))
 
+
+export class QrClient{
+
+    private accesstoken: string; 
+    private urlQR: string;
+
+    constructor(accesstoken: string){
+        this.accesstoken = accesstoken
+        this.urlQR = `https://api.qr-code-generator.com/v1/create?access-token=${accesstoken}`
+    }
+
+
+    public async createQR(config: QrRequestBody){
+        try {
+            return fetch(this.urlQR, 
+                {
+                    headers: {'Content-Type': 'application/json',},
+                    method: "POST",
+                    body: JSON.stringify(config),
+                }
+            ).then(response=> response.text())
+        }
+
+        catch (error) {console.log(error)} 
+
+    }
+
+}
